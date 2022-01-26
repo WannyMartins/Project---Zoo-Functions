@@ -11,8 +11,11 @@ function countAnimals(animal) {
         return objeto;
       });
   }
-  return animals
- .map((bicho) => bicho.name)
+
+  const ani = data
+    .map((bicho) => bicho.species);
+  return ani;
 }
+
 console.log(countAnimals({ specie: 'penguins' }));
 module.exports = countAnimals;
