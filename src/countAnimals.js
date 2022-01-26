@@ -3,20 +3,20 @@ const data = require('../data/zoo_data');
 const animals = data.species;
 
 function countAnimals(animal) {
+  const objeto = {};
   if (!animal) {
-    const objeto = {}
-    animals.map((element) => {
-      {
-        objeto[element.name] = element.residents.length,
-      }
-    });
+    animals
+      .map((element) => {
+        {
+        objeto[element.name] = element.residents.length;
+        }
+      });
     return objeto;
   }
   if (animal) {
     if (animal.sex) {
       const encontrarAnimal = animals.find((especie) => especie.name.includes(animal.specie));
-      const encontrarSexoAnimal = [encontrarAnimal].map((resident) => resident.residents
-        .map((sexo) => sexo.sex.includes(animal.sex)).filter((sex) => sex === true).length);
+      const encontrarSexoAnimal = [encontrarAnimal].map((resident) => resident.residents.map((sexo) => sexo.sex.includes(animal.sex)).filter((sex) => sex === true).length);
       return `${encontrarSexoAnimal}`;
     }
     return animals.find((especie) => especie.name.includes(animal.specie)).residents.length;
