@@ -4,27 +4,22 @@ const animals = data.species;
 
 function countAnimals(animal) {
   const objeto = {};
+  animals.forEach((element) => {
+    objeto[element.name] = element.residents.length;
+  });
   if (!animal) {
-    animals
-      .map((element) => {
-        {
-        objeto[element.name] = element.residents.length;
-        }
-      });
     return objeto;
   }
-  if (animal) {
-    if (animal.sex) {
-      const encontrarAnimal = animals.find((especie) => especie.name.includes(animal.specie));
-      const encontrarSexoAnimal = [encontrarAnimal].map((resident) => resident.residents.map((sexo) => sexo.sex.includes(animal.sex)).filter((sex) => sex === true).length);
-      return `${encontrarSexoAnimal}`;
-    }
-    return animals.find((especie) => especie.name.includes(animal.specie)).residents.length;
+  if (!animal.sex) {
+    const encontrarAnimal = animals.find((especie) => especie.name.includes(animal.specie));
+    return encontrarAnimal.residents.length;
   }
+  return animals.find((nome) => nome.name === animal.specie)
+    .residents.filter((sexo) => sexo.sex === animal.sex).length;
 }
-console.log(countAnimals());
 
-console.log(countAnimals({ specie: 'giraffes', sex: 'female' }));
-console.log(countAnimals({ specie: 'bear' }));
-
+// referecencias === tive ajuda de varios colegas nas salas de mentoria:
+// Imar Mendes;
+// Wendryo;
+// RaphaelMartins; e da Mentora AnaLaura
 module.exports = countAnimals;
