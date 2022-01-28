@@ -1,7 +1,14 @@
 const data = require('../data/zoo_data');
 
-function getEmployeesCoverage() {
-  // seu código aqui
+// const funcionarios = data.employees;
+
+// const encontrarFuncionário = (parametro) {
+// }
+
+function getEmployeesCoverage(parametro) {
+
+  //   // seu código aqui
 }
+// console.log(getEmployeesCoverage('Bethea'));
 
 module.exports = getEmployeesCoverage;
