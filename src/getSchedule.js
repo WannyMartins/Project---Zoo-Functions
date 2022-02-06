@@ -36,8 +36,7 @@ function getSchedule(scheduleTarget) {
   }
   return days;
 }
-
-// tive ajuda de vários colegas para desenvolver Imar Mendes, Danillo Gonçalves, Alexandre Summoyama na explicando a colega Veronica na monitoria.
+// tive ajuda de vários colegas para desenvolver Imar Mendes, Danillo Gonçalves, Alexandre Summoyama explicando a colega Veronica na monitoria.
 // usei a propriedade getOwnPropertyNames para iterar dentro do objeto hours e trazer as chaves como strings para iterar sobre elas com o parametro // conforme >>> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames
 
 module.exports = getSchedule;
